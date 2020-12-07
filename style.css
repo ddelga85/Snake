@@ -1,0 +1,75 @@
+body {
+    background-image: url('snakeBackground2.jpg');
+  }
+.h1 {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    color: white;
+}
+ .game {
+     height: 100vh;
+     display: grid;
+     grid-template-columns: 1fr 2fr 1fr;     
+     font-family: 'Press Start 2P', cursive;
+     color: white;
+}
+
+.start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.startButton {
+    width: 100px;
+    margin-bottom: 25px;
+}
+.pauseButton {
+    width: 100px;
+}
+
+
+#snake {
+    background-color: greenyellow;
+    border: 2px solid darkgreen;
+    border-radius: 5px;
+}
+
+#snakeHead {
+    background-color: red;
+    border: 2px solid darkgreen;
+    border-radius: 5px;
+}
+
+/* #snakeTail {
+    background-color: red;
+    border: 2px solid darkgreen;
+    border-radius: 5px;
+} */
+
+.grid {
+    justify-self: center;
+    margin-top: 40px;
+    height: 600px;
+    width: 600px;
+    border: 2px solid black;
+    background-image: url("gridBackground2.jpg");
+    background-color: #cccccc;
+    display: grid;
+    grid-template-columns: repeat(31, 1fr);
+    grid-template-rows: repeat(31, 1fr);
+}
+
+.worm {
+    max-width: 100%;
+    height: auto;
+}
+
+.score {
+    font-size: 15px;
+}
+
