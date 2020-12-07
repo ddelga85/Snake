@@ -11,18 +11,20 @@ let direction;
 let points = 0;
 let highScore = 0;
 let speed = 250
-const SNAKE = document.getElementById('snake');
-const WORM = document.getElementById('')
 
+$('.instructions').text('Use WASD for controls')
 $('.startButton').on('click', tick )
-updateGame();
-function tick(){
+renderSnake();
+renderWorm();
+
+function tick(){  
    gameSpeed = setInterval(updateGame, speed) 
    updateGame();
    direction = "UP"
 }
 
 function initialState(){
+  $('.instructions').text('Use WASD for controls')
   grid.children().removeAttr('class').removeAttr('src');
     snake = [
     { x: 16, y: 16 },            
@@ -43,7 +45,7 @@ function updateScore(){
   $('.points').text('Points: ' + points);
   if(points >= highScore){
     highScore = points;
-    $('.highScore').text('High Score: ' + points)
+    $('.high').text('High Score: ' + points)
   }
   
 }
@@ -86,8 +88,6 @@ function wormPosition(){
     if(snakeX === worm.x && snakeY === worm.y){
       console.log('redo');
       wormPosition();
-      // worm.x = Math.floor(Math.random() * 31) + 1;
-      // worm.y = Math.floor(Math.random() * 31) + 1;
     }
   }       
 }
@@ -173,6 +173,7 @@ function checkWormEaten(){
           if( snake[0].x === worm.x && snake[0].y === worm.y){
               switch(worm.src){
                 case '11.png':
+                  $('.instructions').text('\+ 50pts & Speed Increased!')
                   speed-=20;
                   if(speed < 40){
                     speed = 40;
@@ -182,12 +183,15 @@ function checkWormEaten(){
                   gameSpeed = setInterval(updateGame, speed)                   
                   break;                
                 case '12.png':
+                  $('.instructions').text('\+ 20pts!')
                   points+=20;
                   break;                
                 case '13.png':
+                  $('.instructions').text('\+ 20pts!')
                   points+=20;
                   break;                
                 case '14.png':
+                  $('.instructions').text('\+ 100pts & Extra Length Increase!')
                   snake.push(snake[snake.length-2])
                   snake.push(snake[snake.length-1])
                   points+=100;
