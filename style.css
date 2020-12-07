@@ -58,8 +58,7 @@ body {
     width: 600px;
     border: 2px solid black;
     border-radius: 10px;
-    background-image: url("gridBackground2.jpg");
-    background-color: #cccccc;
+    background-color: black;
     display: grid;
     grid-template-columns: repeat(31, 1fr);
     grid-template-rows: repeat(31, 1fr);
