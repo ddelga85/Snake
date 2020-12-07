@@ -157,14 +157,14 @@ function selfCollision(){
     if( snake[i].x === snake[0].x && snake[i].y === snake[0].y  ){
       initialState();
 
-      alert("GAME OVER - self") 
+      alert("GAME OVER - Stop hitting yourself!!!") 
     }
   }
 }
 function wallCollision(){     
     if (snake[0].x <1 || snake[0].x >31 || snake[0].y <1 || snake[0].y >31){ 
       initialState();  
-      alert("GAME OVER - wall")       
+      alert("GAME OVER - UMMM....That's a wall!")       
     }
 }
   
