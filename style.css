@@ -1,5 +1,5 @@
 body {
-    background-image: url('snakeBackground2.jpg');
+    background-image: url('snakeBackground3.jpg');
   }
 .h1 {
     display: flex;
@@ -27,6 +27,7 @@ body {
 .startButton {
     width: 100px;
     margin-bottom: 25px;
+    box-shadow: 5px 5px 15px 5px #000000;
 }
 .pauseButton {
     width: 100px;
@@ -56,12 +57,13 @@ body {
     margin-top: 40px;
     height: 600px;
     width: 600px;
-    border: 2px solid black;
+    border: 2px solid blue;
     border-radius: 10px;
     background-color: black;
     display: grid;
     grid-template-columns: repeat(31, 1fr);
     grid-template-rows: repeat(31, 1fr);
+    box-shadow: 5px 5px 15px 5px #000000;
 }
 
 .worm {
