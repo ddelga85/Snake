@@ -13,14 +13,24 @@ let highScore = 0;
 let speed = 250
 
 $('.instructions').text('Use WASD for controls')
-$('.startButton').on('click', tick )
+$('.startButton').on('click', gameRunning )
 renderSnake();
 renderWorm();
 
-function tick(){  
+function gameRunning(){
+  if($('.startButton').text() === "Press to Start!"){
+    tick();
+  }else if($('.startButton').text() === "Pause"){
+    clearTimeout(gameSpeed);
+    $('.startButton').text('Press to Start!')
+  }
+}
+
+function tick(){ 
+  $('.startButton').text('Pause')
    gameSpeed = setInterval(updateGame, speed) 
    updateGame();
-   direction = "UP"
+  //  direction = "UP"
 }
 
 function initialState(){
